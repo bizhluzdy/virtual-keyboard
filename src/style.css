@@ -196,7 +196,7 @@
   [type="button"],
   [type="reset"],
   [type="submit"] {
-    -webkit-appearance: button;
+    appearance: button;
   }
   
   /**
@@ -288,7 +288,7 @@
    */
   
   [type="search"] {
-    -webkit-appearance: textfield; /* 1 */
+    appearance: textfield; /* 1 */
     outline-offset: -2px; /* 2 */
   }
   
@@ -358,3 +358,57 @@
 
 
 /* styles */ 
+  .body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(../src/asset/img/1920px-Miensk\,_Vysoki_Rynak._Менск\,_Высокі_Рынак_\(Lauvergne\,_1840\)_\(2\).jpg) ;
+    background-size: cover;
+  }
+
+  .app-title{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    font-size: 25px;
+    display: block;
+    font-weight: bold;
+    width: fit-content;
+    padding: 15px 20px 5px 20px;
+    margin-top: 60px;
+    border-radius: 25px 25px 0 0 ;
+  }
+
+  .keyboard-textarea{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 25px;
+    font-size: 19px;
+    border: none;
+    width: 450px;
+    height: 150px;
+    border-radius: 15px;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+  }
+  .keyboard-textarea::placeholder{
+    text-align: center;
+    padding-top: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .discription{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    font-size: 10px;
+    text-align: center;
+  }
+  .keyboard-body{
+    height: 230px;
+    width: 695px;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: 60px;
+    border-radius: 5px;
+  }
