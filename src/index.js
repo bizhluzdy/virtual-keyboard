@@ -88,19 +88,20 @@ document.body.innerHTML += `
 
 // keyboard symbols //
 const englishKeyboard = {
-  values: ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "", "    ", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\", "", "", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "\n", "", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "⮝", "", "", "", "", " ", "", "⮜", "⮟", "⮞", ""],
+  values: ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "", "\t", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\", "", "", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "\n", "", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "⮝", "", "", "", "", " ", "", "⮜", "⮟", "⮞", ""],
   symbols: ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace", "Tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\", "Del", "CapsLock", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "Enter", "Shift", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "⮝", "Shift", "Ctrl", "Win", "Alt", "", "Alt", "⮜", "⮟", "⮞", "Ctrl"],
 };
-const englishCapsKeys = {
-  values: ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "", "    ", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[", "]", "\\", "", "", "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "'", "\n", "", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "⮝", "", "", "", "", " ", "", "⮜", "⮟", "⮞", ""],
-  symbols: ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace", "Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[", "]", "\\", "Del", "CapsLock", "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "'", "Enter", "Shift", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "⮝", "Shift", "Ctrl", "Win", "Alt", "", "Alt", "⮜", "⮟", "⮞", "Ctrl"],
+const englishShiftKeys = {
+  values: ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "", "\t", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "{", "}", "|", "", "", "A", "S", "D", "F", "G", "H", "J", "K", "L", ":", "\"", "\n", "", "Z", "X", "C", "V", "B", "N", "M", "<", ">", "?", "⮝", "", "", "", "", "", "", "⮜", "⮟", "⮞", ""],
+  symbols: ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "Backspace", "Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "{", "}", "|", "Del", "CapsLock", "A", "S", "D", "F", "G", "H", "J", "K", "L", ":", "\"", "Enter", "Shift", "Z", "X", "C", "V", "B", "N", "M", "<", ">", "?", "⮝", "Shift", "Ctrl", "Win", "Alt", "", "Alt", "⮜", "⮟", "⮞", "Ctrl"],
 };
 const belarusKeyboard = {
-  values: ["ё", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "", "    ", "й", "ц", "у", "к", "е", "н", "г", "ш", "ў", "з", "х", "'", "\\", "", "", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "\n", "", "я", "ч", "с", "м", "і", "т", "ь", "б", "ю", ".", "⮝", "", "", "", "", " ", "", "⮜", "⮟", "⮞", ""],
+  values: ["ё", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "", "\t", "й", "ц", "у", "к", "е", "н", "г", "ш", "ў", "з", "х", "'", "\\", "", "", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "\n", "", "я", "ч", "с", "м", "і", "т", "ь", "б", "ю", ".", "⮝", "", "", "", "", " ", "", "⮜", "⮟", "⮞", ""],
   symbols: ["ё", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace", "Tab", "й", "ц", "у", "к", "е", "н", "г", "ш", "ў", "з", "х", "'", "\\", "Del", "CapsLock", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "Enter", "Shift", "я", "ч", "с", "м", "і", "т", "ь", "б", "ю", ".", "⮝", "Shift", "Ctrl", "Win", "Alt", "", "Alt", "⮜", "⮟", "⮞", "Ctrl"],
 };
-const belarusCapsKeys = {
-  values: ["Ё", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "", "    ", "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Ў", "З", "Х", "'", "\\", "", "", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "", "", "Я", "Ч", "С", "М", "І", "Т", "Ь", "Б", "Ю", ",", "⮝", "", "", "", "", " ", "", "⮜", "⮟", "⮞", ""],
+const belarusShiftKeys = {
+  values: ["Ё", "!", "\"", "№", ";", "%", ":", "?", "*", "(", ")", "_", "+", "", "\t", "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Ў", "З", "Х", "'", "/", "", "", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "", "", "Я", "Ч", "С", "М", "І", "Т", "Ь", "Б", "Ю", ",", "⮝", "", "", "", "", " ", "", "⮜", "⮟", "⮞", ""],
+  symbols: ["Ё", "!", "\"", "№", ";", "%", ":", "?", "*", "(", ")", "_", "+", "Backspace", "Tab", "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Ў", "З", "Х", "'", "/", "Del", "CapsLock", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "Enter", "Shift", "Я", "Ч", "С", "М", "І", "Т", "Ь", "Б", "Ю", ",", "⮝", "Shift", "Ctrl", "Win", "Alt", "", "Alt", "⮜", "⮟", "⮞", "Ctrl"],
 };
 
 // lang settings //
@@ -119,6 +120,8 @@ const discription = document.getElementsByClassName("discription")[0];
 const title = document.getElementsByClassName("app-title")[0];
 const textarea = document.querySelector("#textarea");
 const keyboardButtons = document.querySelectorAll(".keyboard-body__row_key");
+const capsButtons = document.querySelectorAll(".key");
+let capslockIsOn = false;
 
 document.addEventListener("keydown", (event) => {
   if (event.ctrlKey && event.altKey) {
@@ -131,6 +134,7 @@ document.addEventListener("keydown", (event) => {
       textarea.placeholder = "Our language is Belarusian, because we are Belarusians, our state is Belarus, and we are a great cultural nation. Zenon Pazniak";
       discription.innerHTML = "The application is designed for the <b>Windows</b> operating system.<br>To switch the input language, press <b>Ctrl + Alt</b>.<br>Painting: B. Lavern, Vysoky Rynak";
       keyboardButtons.forEach((button, index) => {
+        // tutai dodat //
         button.value = englishKeyboard.values[index];
         button.textContent = englishKeyboard.symbols[index];
       });
@@ -146,6 +150,11 @@ document.addEventListener("keydown", (event) => {
         button.value = belarusKeyboard.values[index];
         button.textContent = belarusKeyboard.symbols[index];
       });
+    }
+    if (capslockIsOn === true) {
+      toUpper();
+    } else {
+      toLower();
     }
   }
 });
@@ -200,11 +209,71 @@ function deleteText() {
   }
 }
 
+// Shift //
+function shiftdown() {
+  keyboardButtons.forEach((button, index) => {
+    if (lang === "en") {
+      button.value = englishShiftKeys.values[index];
+      button.textContent = englishShiftKeys.symbols[index];
+    } else {
+      button.value = belarusShiftKeys.values[index];
+      button.textContent = belarusShiftKeys.symbols[index];
+    }
+  });
+}
+function shiftup() {
+  keyboardButtons.forEach((button, index) => {
+    if (lang === "en") {
+      button.value = englishKeyboard.values[index];
+      button.textContent = englishKeyboard.symbols[index];
+    } else {
+      button.value = belarusKeyboard.values[index];
+      button.textContent = belarusKeyboard.symbols[index];
+    }
+  });
+}
+document.addEventListener("keydown", (event) => {
+  if (event.code === "ShiftLeft" || event.code === "ShiftRight") {
+    shiftdown();
+    if (capslockIsOn === !true) {
+      toUpper();
+    } else {
+      toLower();
+    }
+  }
+});
+document.addEventListener("keyup", (event) => {
+  if (event.code === "ShiftLeft" || event.code === "ShiftRight") {
+    shiftup();
+    if (capslockIsOn === true) {
+      toUpper();
+    } else {
+      toLower();
+    }
+  }
+});
+
+// Caps //
+function toUpper() {
+  capsButtons.forEach((button) => {
+    button.value = button.value.toUpperCase();
+    button.textContent = button.textContent.toUpperCase();
+  });
+}
+function toLower() {
+  capsButtons.forEach((button) => {
+    button.value = button.value.toLowerCase();
+    button.textContent = button.textContent.toLowerCase();
+  });
+}
+
 // press animation //
 document.addEventListener("keydown", (event) => {
   const virtualKey = document.querySelector(`.keyboard-body__row_key[data-code="${event.code}"]`);
   if (virtualKey) {
-    virtualKey.classList.add("active");
+    if (event.key !== "CapsLock") {
+      virtualKey.classList.add("active");
+    }
     if (event.key === "Backspace") {
       event.preventDefault();
       backspaceText();
@@ -216,12 +285,49 @@ document.addEventListener("keydown", (event) => {
       const character = virtualKey.value;
       inputText(character);
     }
+    if (event.key === "CapsLock") {
+      virtualKey.classList.toggle("active");
+      capslockIsOn = !capslockIsOn;
+      if (capslockIsOn === true) {
+        toUpper();
+      } else {
+        toLower();
+      }
+    }
   }
 });
+
 document.addEventListener("keyup", (event) => {
   const virtualKey = document.querySelector(`.keyboard-body__row_key[data-code="${event.code}"]`);
   if (virtualKey) {
     event.preventDefault();
-    virtualKey.classList.remove("active");
+    if (event.key !== "CapsLock") {
+      virtualKey.classList.remove("active");
+    }
   }
+});
+
+const virtualKeys = document.querySelectorAll(".keyboard-body__row_key");
+virtualKeys.forEach((key) => {
+  key.addEventListener("mousedown", (event) => {
+    const code = key.getAttribute("data-code");
+    const character = key.value;
+    if (code === "Backspace") {
+      backspaceText();
+    } else if (code === "Delete") {
+      deleteText();
+    } else {
+      inputText(character);
+    }
+    if (code === "CapsLock") {
+      key.classList.toggle("active");
+      capslockIsOn = !capslockIsOn;
+      if (capslockIsOn === true) {
+        toUpper();
+      } else {
+        toLower();
+      }
+    }
+    event.preventDefault();
+  });
 });
