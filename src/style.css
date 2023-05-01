@@ -347,7 +347,9 @@
   [hidden] {
     display: none;
   }
-
+html{
+    user-select: none;
+}
 
 
 
@@ -360,12 +362,13 @@
 /* styles */ 
   .body{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: url(./1920px-Miensk\,_Vysoki_Rynak._Менск\,_Высокі_Рынак_\(Lauvergne\,_1840\)_\(2\).jpg) ;
     background-size: cover;
+    vertical-align: bottom;
   }
 
   .app-title{
@@ -376,8 +379,8 @@
     font-weight: bold;
     width: fit-content;
     padding: 15px 20px 5px 20px;
-    margin-top: 60px;
-    border-radius: 25px 25px 0 0 ;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 
   .keyboard-textarea{
@@ -386,8 +389,8 @@
     padding: 25px;
     font-size: 19px;
     border: none;
-    width: 450px;
-    height: 150px;
+    min-width: 450px;
+    min-height: 120px;
     border-radius: 15px;
     outline: none;
     resize: none;
@@ -410,5 +413,84 @@
     width: 695px;
     background-color: rgba(0, 0, 0, 0.4);
     margin-top: 60px;
-    border-radius: 5px;
+    border-radius: 15px;
   }
+  .keyboard-body{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    box-sizing: border-box;
+    gap: 5px;
+  }
+  .keyboard-body__row{
+    display: flex;
+    gap: 5px;
+
+  }
+  .keyboard-body__row_key{
+    min-width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    border: 1px solid black;
+    transition: .2s;
+  }
+  .keyboard-body__row_key:hover{
+    box-shadow: 0px 0px 4px 0px black;
+  }
+  .keyboard-body__row_key:active{
+    box-shadow: 0px 0px 4px 0px black inset;
+  }
+  .backquote{
+    border-radius: 10px 4px 4px 4px;
+  }
+  .backspace{
+    width: 100px;
+    border-radius: 4px 10px 4px 4px;
+  }
+  .tab{
+    width: 50px;
+  }
+  .del{
+    width: 45px;
+  }
+  .shift{
+    width: 93px;
+  }
+  .space{
+    width: 330px;
+  }
+  .caps{
+    width: 93px;
+  }
+  .enter{
+    width: 93px;
+  }
+  .left-ctrl{
+    border-radius: 4px 4px 4px 10px;
+  }
+  .right-ctrl{
+    border-radius: 4px 4px 10px 4px;
+  }
+  .backspace,
+  .tab,
+  .del,
+  .enter,
+  .caps,
+  .shift,
+  .ctrl,
+  .alt,
+  .win,
+  .up,
+  .down,
+  .right,
+  .left{
+    background: rgba(255, 255, 255, 0.35);
+  }
+  

@@ -1,13 +1,12 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-const mode = process.env.NODE_ENV || 'development';
-const devMode = mode === 'development';
-const target = devMode ? 'web' : 'browserslist';
-const devtool = devMode ? 'source-map' : undefined;
-
+const mode = process.env.NODE_ENV || "development";
+const devMode = mode === "development";
+const target = devMode ? "web" : "browserslist";
+const devtool = devMode ? "source-map" : undefined;
 
 module.exports = {
   mode,
@@ -18,26 +17,26 @@ module.exports = {
     open: true,
     hot: true,
   },
-  entry: ["@babel/polyfill", path.resolve(__dirname, 'src', 'index.js')],
+  entry: ["@babel/polyfill", path.resolve(__dirname, "src", "index.js")],
   output: {
-    path: path.resolve(__dirname, 'bund'),
+    path: path.resolve(__dirname, "bund"),
     clean: true,
-    filename: '[name].[contenthash].js',
-    assetModuleFilename: 'assets/[name][ext]',
+    filename: "[name].[contenthash].js",
+    assetModuleFilename: "assets/[name][ext]",
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src', 'index.html')
+      template: path.resolve(__dirname, "src", "index.html"),
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: "[name].[contenthash].css",
     }),
   ],
   module: {
     rules: [
       {
         test: /\.html$/i,
-        loader: 'html-loader',
+        loader: "html-loader",
       },
       {
         test: /\.(c|sa|sc)ss$/i,
@@ -51,6 +50,7 @@ module.exports = {
             loader: "postcss-loader",
             options: {
               postcssOptions: {
+                // eslint-disable-next-line global-require
                 plugins: [require("postcss-preset-env")],
               },
             },
@@ -62,19 +62,19 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
             presets: [
-              ['@babel/preset-env', { targets: "defaults" }]
-            ]
-          }
-        }
+              ["@babel/preset-env", { targets: "defaults" }],
+            ],
+          },
+        },
       },
       {
         test: /\.(woff2?$|ttf|otf|eot)/i,
-        type: 'asset/resource',
+        type: "asset/resource",
         generator: {
-          filename: 'fonts/[name][ext]',
+          filename: "fonts/[name][ext]",
         },
       },
       {
@@ -82,37 +82,37 @@ module.exports = {
         use: devMode
           ? []
           : [
-              {
-                loader: 'image-webpack-loader',
-                options: {
-                  mozjpeg: {
-                    progressive: true,
-                  },
-                  optipng: {
-                    enabled: false,
-                  },
-                  pngquant: {
-                    quality: [0.65, 0.9],
-                    speed: 4,
-                  },
-                  gifsicle: {
-                    interlaced: false,
-                  },
-                  webp: {
-                    quality: 75,
-                  },
+            {
+              loader: "image-webpack-loader",
+              options: {
+                mozjpeg: {
+                  progressive: true,
+                },
+                optipng: {
+                  enabled: false,
+                },
+                pngquant: {
+                  quality: [0.65, 0.9],
+                  speed: 4,
+                },
+                gifsicle: {
+                  interlaced: false,
+                },
+                webp: {
+                  quality: 75,
                 },
               },
-            ],
-        type: 'asset/resource',
+            },
+          ],
+        type: "asset/resource",
       },
-    ]
+    ],
   },
   optimization: {
     minimize: true,
     minimizer: [
-      '...',
+      "...",
       new CssMinimizerPlugin(),
-    ]
-  }
-}; 
+    ],
+  },
+};
