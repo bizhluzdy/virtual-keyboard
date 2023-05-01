@@ -89,7 +89,7 @@ module.exports = {
                   progressive: true,
                 },
                 optipng: {
-                  enabled: false,
+                  enabled: true,
                 },
                 pngquant: {
                   quality: [0.65, 0.9],

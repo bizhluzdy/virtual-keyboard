@@ -439,12 +439,14 @@ html{
     color: rgb(0, 0, 0);
     font-weight: 500;
     border: 1px solid black;
-    transition: .2s;
+    transition: .1s;
+    cursor: pointer;
   }
   .keyboard-body__row_key:hover{
     box-shadow: 0px 0px 4px 0px black;
   }
-  .keyboard-body__row_key:active{
+  .keyboard-body__row_key:active,
+  .active{
     box-shadow: 0px 0px 4px 0px black inset;
   }
   .backquote{
@@ -460,8 +462,11 @@ html{
   .del{
     width: 45px;
   }
-  .shift{
-    width: 93px;
+  .shift:first-child{
+    width: 99px;
+  }
+  .shift:last-child{
+    width: 87px;
   }
   .space{
     width: 330px;
@@ -490,7 +495,8 @@ html{
   .up,
   .down,
   .right,
-  .left{
+  .left,
+  .space{
     background: rgba(255, 255, 255, 0.35);
   }
   
