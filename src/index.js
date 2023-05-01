@@ -10,36 +10,36 @@ document.body.innerHTML += `
 <p class="discription"></p>
 <div class="keyboard-body">
     <div class="keyboard-body__row">
-        <button class="keyboard-body__row_key key backquote" data-code="Backquote"></button>
-        <button class="keyboard-body__row_key key" data-code="Digit1"></button>
-        <button class="keyboard-body__row_key key" data-code="Digit2"></button>
-        <button class="keyboard-body__row_key key" data-code="Digit3"></button>
-        <button class="keyboard-body__row_key key" data-code="Digit4"></button>
-        <button class="keyboard-body__row_key key" data-code="Digit5"></button>
-        <button class="keyboard-body__row_key key" data-code="Digit6"></button>
-        <button class="keyboard-body__row_key key" data-code="Digit7"></button>
-        <button class="keyboard-body__row_key key" data-code="Digit8"></button>
-        <button class="keyboard-body__row_key key" data-code="Digit9"></button>
-        <button class="keyboard-body__row_key key" data-code="Digit0"></button>
-        <button class="keyboard-body__row_key key" data-code="Minus"></button>
-        <button class="keyboard-body__row_key key" data-code="Equal"></button>
+        <button class="keyboard-body__row_key key backquote" data-code="Backquote" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="Digit1" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="Digit2" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="Digit3" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="Digit4" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="Digit5" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="Digit6" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="Digit7" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="Digit8" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="Digit9" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="Digit0" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="Minus" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="Equal" value=""></button>
         <button class="keyboard-body__row_key backspace" data-code="Backspace">Backspace</button>
     </div>
     <div class="keyboard-body__row">
-        <button class="keyboard-body__row_key tab" data-code="Tab">Tab</button>
-        <button class="keyboard-body__row_key key" data-code="KeyQ"></button>
-        <button class="keyboard-body__row_key key" data-code="KeyW"></button>
-        <button class="keyboard-body__row_key key" data-code="KeyE"></button>
-        <button class="keyboard-body__row_key key" data-code="KeyR"></button>
-        <button class="keyboard-body__row_key key" data-code="KeyT"></button>
-        <button class="keyboard-body__row_key key" data-code="KeyY"></button>
-        <button class="keyboard-body__row_key key" data-code="KeyU"></button>
-        <button class="keyboard-body__row_key key" data-code="KeyI"></button>
-        <button class="keyboard-body__row_key key" data-code="KeyO"></button>
-        <button class="keyboard-body__row_key key" data-code="KeyP"></button>
-        <button class="keyboard-body__row_key key" data-code="BracketLeft"></button>
-        <button class="keyboard-body__row_key key" data-code="BracketRight"></button>
-        <button class="keyboard-body__row_key key" data-code="Backslash"></button>
+        <button class="keyboard-body__row_key tab" data-code="Tab" value="">Tab</button>
+        <button class="keyboard-body__row_key key" data-code="KeyQ" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="KeyW" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="KeyE" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="KeyR" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="KeyT" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="KeyY" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="KeyU" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="KeyI" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="KeyO" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="KeyP" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="BracketLeft" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="BracketRight" value=""></button>
+        <button class="keyboard-body__row_key key" data-code="Backslash" value=""></button>
         <button class="keyboard-body__row_key del" data-code="Delete">Del</button>
     </div>
     <div class="keyboard-body__row">
@@ -86,6 +86,23 @@ document.body.innerHTML += `
 </div>
 `;
 
+// keyboard symbols //
+const englishKeyboard = {
+  values: ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "", "    ", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\", "", "", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "\n", "", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "⮝", "", "", "", "", " ", "", "⮜", "⮟", "⮞", ""],
+  symbols: ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace", "Tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\", "Del", "CapsLock", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "Enter", "Shift", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "⮝", "Shift", "Ctrl", "Win", "Alt", "", "Alt", "⮜", "⮟", "⮞", "Ctrl"],
+};
+const englishCapsKeys = {
+  values: ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "", "    ", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[", "]", "\\", "", "", "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "'", "\n", "", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "⮝", "", "", "", "", " ", "", "⮜", "⮟", "⮞", ""],
+  symbols: ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace", "Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[", "]", "\\", "Del", "CapsLock", "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "'", "Enter", "Shift", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "⮝", "Shift", "Ctrl", "Win", "Alt", "", "Alt", "⮜", "⮟", "⮞", "Ctrl"],
+};
+const belarusKeyboard = {
+  values: ["ё", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "", "    ", "й", "ц", "у", "к", "е", "н", "г", "ш", "ў", "з", "х", "'", "\\", "", "", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "\n", "", "я", "ч", "с", "м", "і", "т", "ь", "б", "ю", ".", "⮝", "", "", "", "", " ", "", "⮜", "⮟", "⮞", ""],
+  symbols: ["ё", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace", "Tab", "й", "ц", "у", "к", "е", "н", "г", "ш", "ў", "з", "х", "'", "\\", "Del", "CapsLock", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "Enter", "Shift", "я", "ч", "с", "м", "і", "т", "ь", "б", "ю", ".", "⮝", "Shift", "Ctrl", "Win", "Alt", "", "Alt", "⮜", "⮟", "⮞", "Ctrl"],
+};
+const belarusCapsKeys = {
+  values: ["Ё", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "", "    ", "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Ў", "З", "Х", "'", "\\", "", "", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "", "", "Я", "Ч", "С", "М", "І", "Т", "Ь", "Б", "Ю", ",", "⮝", "", "", "", "", " ", "", "⮜", "⮟", "⮞", ""],
+};
+
 // lang settings //
 let lang = localStorage.getItem("lang") || document.documentElement.lang;
 function saveLangStorage() {
@@ -99,6 +116,9 @@ localStorage.setItem("lang", lang);
 // change lang //
 const favicon = document.querySelector("link[rel=\"shortcut icon\"]");
 const discription = document.getElementsByClassName("discription")[0];
+const title = document.getElementsByClassName("app-title")[0];
+const textarea = document.querySelector("#textarea");
+const keyboardButtons = document.querySelectorAll(".keyboard-body__row_key");
 
 document.addEventListener("keydown", (event) => {
   if (event.ctrlKey && event.altKey) {
@@ -107,13 +127,25 @@ document.addEventListener("keydown", (event) => {
       document.documentElement.lang = "en";
       favicon.href = "./assets/eng.png";
       document.title = "Virtual Keyboard";
+      title.innerHTML = "Virtual Keyboard";
+      textarea.placeholder = "Our language is Belarusian, because we are Belarusians, our state is Belarus, and we are a great cultural nation. Zenon Pazniak";
       discription.innerHTML = "The application is designed for the <b>Windows</b> operating system.<br>To switch the input language, press <b>Ctrl + Alt</b>.<br>Painting: B. Lavern, Vysoky Rynak";
+      keyboardButtons.forEach((button, index) => {
+        button.value = englishKeyboard.values[index];
+        button.textContent = englishKeyboard.symbols[index];
+      });
     } else {
       lang = "be";
       document.documentElement.lang = "be";
       favicon.href = "./assets/bel.png";
       document.title = "Віртуальная Клавіятура";
+      title.innerHTML = "Віртуальная Клавіятура";
+      textarea.placeholder = "Наша мова - беларуская, таму што мы беларусы, наша дзяржава - Беларусь, і мы вялікі культурны народ. Зянон Пазьняк";
       discription.innerHTML = "Дадатак распрацаваны для аператыўнай сістэмы <b>Windows</b>.<br>Каб пераключыць мову ўвода націсьніце <b>Ctrl + Alt</b>.<br>Жывапіс: Б. Лявэрнь, Высокі Рынак";
+      keyboardButtons.forEach((button, index) => {
+        button.value = belarusKeyboard.values[index];
+        button.textContent = belarusKeyboard.symbols[index];
+      });
     }
   }
 });
@@ -123,45 +155,73 @@ if (lang === "en") {
   document.documentElement.lang = "en";
   favicon.href = "./assets/eng.png";
   document.title = "Virtual Keyboard";
+  title.innerHTML = "Virtual Keyboard";
+  textarea.placeholder = "Our language is Belarusian, because we are Belarusians, our state is Belarus, and we are a great cultural nation. Zenon Pazniak";
   discription.innerHTML = "The application is designed for the <b>Windows</b> operating system.<br>To switch the input language, press <b>Ctrl + Alt</b>.<br>Painting: B. Lavern, Vysoky Rynak";
+  keyboardButtons.forEach((button, index) => {
+    button.value = englishKeyboard.values[index];
+    button.textContent = englishKeyboard.symbols[index];
+  });
 } else {
   lang = "be";
   document.documentElement.lang = "be";
   favicon.href = "./assets/bel.png";
   document.title = "Віртуальная Клавіятура";
+  title.innerHTML = "Віртуальная Клавіятура";
+  textarea.placeholder = "Наша мова - беларуская, таму што мы беларусы, наша дзяржава - Беларусь, і мы вялікі культурны народ. Зянон Пазьняк";
   discription.innerHTML = "Дадатак распрацаваны для аператыўнай сістэмы <b>Windows</b>.<br>Каб пераключыць мову ўвода націсьніце <b>Ctrl + Alt</b>.<br>Жывапіс: Б. Лявэрнь, Высокі Рынак";
+  keyboardButtons.forEach((button, index) => {
+    button.value = belarusKeyboard.values[index];
+    button.textContent = belarusKeyboard.symbols[index];
+  });
 }
 
-// keyboard symbols //
-const englishKeyboard = {
-  topRow: ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace"],
-  secondRow: ["Tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\"],
-  thirdRow: ["CapsLock", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "Enter"],
-  fourthRow: ["Shift", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "⮝", "Shift"],
-};
-const belarusKeyboard = {
-  topRow: ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace"],
-  secondRow: ["Tab", "й", "ц", "у", "к", "е", "н", "г", "ш", "ў", "з", "х", "'", "\\"],
-  thirdRow: ["CapsLock", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "Enter"],
-  fourthRow: ["Shift", "я", "ч", "с", "м", "і", "т", "ь", "б", "ю", ".", "⮝", "Shift"],
-};
-const belarusKeyboardShift = {
-  // eslint-disable-next-line
-  topRow: ["Ё", "!", '"', "№", ";", "%", ":", "?", "*", "(", ")", "_", "+", "Backspace"],
-  secondRow: ["Tab", "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Ў", "З", "Х", "'", "/"],
-  thirdRow: ["CapsLock", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "Enter"],
-  fourthRow: ["Shift", "Я", "Ч", "С", "М", "І", "Т", "Ь", "Б", "Ю", ",", "⮝", "Shift"],
-};
+// add & remove text //
+function inputText(text) {
+  const { selectionStart, selectionEnd, value } = textarea;
+  const newValue = value.substring(0, selectionStart) + text + value.substring(selectionEnd);
+  textarea.value = newValue;
+  textarea.setSelectionRange(selectionStart + text.length, selectionStart + text.length);
+}
+function backspaceText() {
+  const { selectionStart, value } = textarea;
+  if (selectionStart > 0) {
+    const newValue = value.substring(0, selectionStart - 1) + value.substring(selectionStart);
+    textarea.value = newValue;
+    textarea.setSelectionRange(selectionStart - 1, selectionStart - 1);
+  }
+}
+function deleteText() {
+  const { selectionStart, value } = textarea;
+  if (selectionStart < value.length) {
+    const newValue = value.substring(0, selectionStart) + value.substring(selectionStart + 1);
+    textarea.value = newValue;
+    textarea.setSelectionRange(selectionStart, selectionStart);
+  }
+}
 
+// press animation //
 document.addEventListener("keydown", (event) => {
   const virtualKey = document.querySelector(`.keyboard-body__row_key[data-code="${event.code}"]`);
   if (virtualKey) {
     virtualKey.classList.add("active");
+    if (event.key === "Backspace") {
+      event.preventDefault();
+      backspaceText();
+    } else if (event.key === "Delete") {
+      event.preventDefault();
+      deleteText();
+    } else {
+      event.preventDefault();
+      const character = virtualKey.value;
+      inputText(character);
+    }
   }
 });
 document.addEventListener("keyup", (event) => {
   const virtualKey = document.querySelector(`.keyboard-body__row_key[data-code="${event.code}"]`);
   if (virtualKey) {
+    event.preventDefault();
     virtualKey.classList.remove("active");
   }
 });
