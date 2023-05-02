@@ -1,9 +1,9 @@
-// style import //
+// Style import //
 import "./style.css";
 import "./bel.png";
 import "./eng.png";
 
-// add html in html file //
+// Add html in html file //
 document.body.innerHTML += `
 <h2 class="app-title">Віртуальная клавіятура</h2>
 <textarea name="text" id="textarea" class="keyboard-textarea" maxlength="259" placeholder="Наша мова - беларуская, таму што мы беларусы, наша дзяржава - Беларусь, і мы вялікі культурны народ. Зянон Пазьняк"></textarea>
@@ -86,7 +86,7 @@ document.body.innerHTML += `
 </div>
 `;
 
-// keyboard symbols //
+// Keyboard symbols | нужно ли все это //
 const englishKeyboard = {
   values: ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "", "\t", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\", "", "", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "\n", "", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "⮝", "", "", "", "", " ", "", "⮜", "⮟", "⮞", ""],
   symbols: ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace", "Tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\", "Del", "CapsLock", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "Enter", "Shift", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "⮝", "Shift", "Ctrl", "Win", "Alt", "", "Alt", "⮜", "⮟", "⮞", "Ctrl"],
@@ -104,17 +104,15 @@ const belarusShiftKeys = {
   symbols: ["Ё", "!", "\"", "№", ";", "%", ":", "?", "*", "(", ")", "_", "+", "Backspace", "Tab", "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Ў", "З", "Х", "'", "/", "Del", "CapsLock", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "Enter", "Shift", "Я", "Ч", "С", "М", "І", "Т", "Ь", "Б", "Ю", ",", "⮝", "Shift", "Ctrl", "Win", "Alt", "", "Alt", "⮜", "⮟", "⮞", "Ctrl"],
 };
 
-// lang settings //
+// Lang settings //
 let lang = localStorage.getItem("lang") || document.documentElement.lang;
 function saveLangStorage() {
   localStorage.setItem("lang", lang);
 }
-
 window.addEventListener("beforeunload", saveLangStorage);
-
 localStorage.setItem("lang", lang);
 
-// change lang //
+// Change lang //
 const favicon = document.querySelector("link[rel=\"shortcut icon\"]");
 const discription = document.getElementsByClassName("discription")[0];
 const title = document.getElementsByClassName("app-title")[0];
@@ -184,7 +182,7 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// init app //
+// Init app //
 if (lang === "en") {
   document.documentElement.lang = "en";
   favicon.href = "./assets/eng.png";
@@ -212,7 +210,7 @@ if (lang === "en") {
   });
 }
 
-// add & remove text //
+// Add & remove text //
 function inputText(text) {
   const { selectionStart, selectionEnd, value } = textarea;
   const newValue = value.substring(0, selectionStart) + text + value.substring(selectionEnd);
@@ -221,17 +219,16 @@ function inputText(text) {
 }
 function backspaceText() {
   const { selectionStart, selectionEnd, value } = textarea;
-  if (selectionStart < selectionEnd) { // удаление выделенного текста
+  if (selectionStart < selectionEnd) {
     const newValue = value.substring(0, selectionStart) + value.substring(selectionEnd);
     textarea.value = newValue;
     textarea.setSelectionRange(selectionStart, selectionStart);
-  } else if (selectionStart > 0) { // удаление одного символа
+  } else if (selectionStart > 0) {
     const newValue = value.substring(0, selectionStart - 1) + value.substring(selectionStart);
     textarea.value = newValue;
     textarea.setSelectionRange(selectionStart - 1, selectionStart - 1);
   }
 }
-
 function deleteText() {
   const { selectionStart, selectionEnd, value } = textarea;
   if (selectionStart < selectionEnd) { // удаление выделенного текста
@@ -245,7 +242,7 @@ function deleteText() {
   }
 }
 
-// Shift //
+// Shift | более-менее //
 function shiftdown() {
   keyboardButtons.forEach((button, index) => {
     if (lang === "en") {
@@ -282,7 +279,6 @@ function shiftup() {
     }
   });
 }
-
 document.addEventListener("keydown", (event) => {
   if (event.code === "ShiftLeft" || event.code === "ShiftRight") {
     shiftdown();
@@ -306,7 +302,7 @@ document.addEventListener("keyup", (event) => {
   }
 });
 
-// press animation //
+// press animation | в идеале можно заняться отладкой в лучшее время //
 document.addEventListener("keydown", (event) => {
   const virtualKey = document.querySelector(`.keyboard-body__row_key[data-code="${event.code}"]`);
   if (virtualKey) {
@@ -339,7 +335,6 @@ document.addEventListener("keydown", (event) => {
     }
   }
 });
-
 document.addEventListener("keyup", (event) => {
   const virtualKey = document.querySelector(`.keyboard-body__row_key[data-code="${event.code}"]`);
   if (virtualKey) {
@@ -349,7 +344,6 @@ document.addEventListener("keyup", (event) => {
     }
   }
 });
-
 const virtualKeys = document.querySelectorAll(".keyboard-body__row_key");
 virtualKeys.forEach((key) => {
   key.addEventListener("mousedown", (event) => {
@@ -381,7 +375,6 @@ virtualKeys.forEach((key) => {
     event.preventDefault();
   });
 });
-
 document.addEventListener("mouseup", (event) => {
   if (shiftInPress) {
     shiftInPress = false;
@@ -397,3 +390,5 @@ document.addEventListener("mouseup", (event) => {
 document.addEventListener("contextmenu", (event) => {
   event.preventDefault();
 });
+
+// need update in future for best performance, but now is all works //
