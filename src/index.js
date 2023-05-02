@@ -123,23 +123,28 @@ const keyboardButtons = document.querySelectorAll(".keyboard-body__row_key");
 const capsButtons = document.querySelectorAll(".key");
 let shiftInPress = false;
 let capslockIsOn = false;
+let currCase = false;
 
 // Caps //
 function toUpper() {
-  capsButtons.forEach((button) => {
-    // eslint-disable-next-line no-param-reassign
-    button.value = button.value.toUpperCase();
-    // eslint-disable-next-line no-param-reassign
-    button.textContent = button.textContent.toUpperCase();
+  capsButtons.forEach((key) => {
+    const character = key.textContent;
+    const characterUpper = character.toUpperCase();
+    const keyElem = key;
+    keyElem.textContent = characterUpper;
+    keyElem.value = characterUpper;
   });
+  currCase = true;
 }
 function toLower() {
-  capsButtons.forEach((button) => {
-    // eslint-disable-next-line no-param-reassign
-    button.value = button.value.toLowerCase();
-    // eslint-disable-next-line no-param-reassign
-    button.textContent = button.textContent.toLowerCase();
+  capsButtons.forEach((key) => {
+    const character = key.textContent;
+    const characterLower = character.toLowerCase();
+    const keyElem = key;
+    keyElem.textContent = characterLower;
+    keyElem.value = characterLower;
   });
+  currCase = false;
 }
 
 document.addEventListener("keydown", (event) => {
@@ -153,10 +158,9 @@ document.addEventListener("keydown", (event) => {
       textarea.placeholder = "Our language is Belarusian, because we are Belarusians, our state is Belarus, and we are a great cultural nation. Zenon Pazniak";
       discription.innerHTML = "The application is designed for the <b>Windows</b> operating system.<br>To switch the input language, press <b>Ctrl + Alt</b>.<br>Painting: B. Lavern, Vysoky Rynak";
       keyboardButtons.forEach((button, index) => {
-        // eslint-disable-next-line no-param-reassign
-        button.value = englishKeyboard.values[index];
-        // eslint-disable-next-line no-param-reassign
-        button.textContent = englishKeyboard.symbols[index];
+        const buttonNew = button;
+        buttonNew.value = englishKeyboard.values[index];
+        buttonNew.textContent = englishKeyboard.symbols[index];
       });
     } else {
       lang = "be";
@@ -167,10 +171,9 @@ document.addEventListener("keydown", (event) => {
       textarea.placeholder = "Наша мова - беларуская, таму што мы беларусы, наша дзяржава - Беларусь, і мы вялікі культурны народ. Зянон Пазьняк";
       discription.innerHTML = "Дадатак распрацаваны для аператыўнай сістэмы <b>Windows</b>.<br>Каб пераключыць мову ўвода націсьніце <b>Ctrl + Alt</b>.<br>Жывапіс: Б. Лявэрнь, Высокі Рынак";
       keyboardButtons.forEach((button, index) => {
-        // eslint-disable-next-line no-param-reassign
-        button.value = belarusKeyboard.values[index];
-        // eslint-disable-next-line no-param-reassign
-        button.textContent = belarusKeyboard.symbols[index];
+        const buttonNew = button;
+        buttonNew.value = belarusKeyboard.values[index];
+        buttonNew.textContent = belarusKeyboard.symbols[index];
       });
     }
     if (capslockIsOn === true) {
@@ -190,10 +193,9 @@ if (lang === "en") {
   textarea.placeholder = "Our language is Belarusian, because we are Belarusians, our state is Belarus, and we are a great cultural nation. Zenon Pazniak";
   discription.innerHTML = "The application is designed for the <b>Windows</b> operating system.<br>To switch the input language, press <b>Ctrl + Alt</b>.<br>Painting: B. Lavern, Vysoky Rynak";
   keyboardButtons.forEach((button, index) => {
-    // eslint-disable-next-line no-param-reassign
-    button.value = englishKeyboard.values[index];
-    // eslint-disable-next-line no-param-reassign
-    button.textContent = englishKeyboard.symbols[index];
+    const buttonNew = button;
+    buttonNew.value = englishKeyboard.values[index];
+    buttonNew.textContent = englishKeyboard.symbols[index];
   });
 } else {
   lang = "be";
@@ -204,10 +206,9 @@ if (lang === "en") {
   textarea.placeholder = "Наша мова - беларуская, таму што мы беларусы, наша дзяржава - Беларусь, і мы вялікі культурны народ. Зянон Пазьняк";
   discription.innerHTML = "Дадатак распрацаваны для аператыўнай сістэмы <b>Windows</b>.<br>Каб пераключыць мову ўвода націсьніце <b>Ctrl + Alt</b>.<br>Жывапіс: Б. Лявэрнь, Высокі Рынак";
   keyboardButtons.forEach((button, index) => {
-    // eslint-disable-next-line no-param-reassign
-    button.value = belarusKeyboard.values[index];
-    // eslint-disable-next-line no-param-reassign
-    button.textContent = belarusKeyboard.symbols[index];
+    const buttonNew = button;
+    buttonNew.value = belarusKeyboard.values[index];
+    buttonNew.textContent = belarusKeyboard.symbols[index];
   });
 }
 
@@ -239,15 +240,13 @@ function deleteText() {
 function shiftdown() {
   keyboardButtons.forEach((button, index) => {
     if (lang === "en") {
-      // eslint-disable-next-line no-param-reassign
-      button.value = englishShiftKeys.values[index];
-      // eslint-disable-next-line no-param-reassign
-      button.textContent = englishShiftKeys.symbols[index];
+      const buttonNew = button;
+      buttonNew.value = englishShiftKeys.values[index];
+      buttonNew.textContent = englishShiftKeys.symbols[index];
     } else {
-      // eslint-disable-next-line no-param-reassign
-      button.value = belarusShiftKeys.values[index];
-      // eslint-disable-next-line no-param-reassign
-      button.textContent = belarusShiftKeys.symbols[index];
+      const buttonNew = button;
+      buttonNew.value = belarusShiftKeys.values[index];
+      buttonNew.textContent = belarusShiftKeys.symbols[index];
     }
     if (capslockIsOn) {
       capslockIsOn = false;
@@ -259,15 +258,13 @@ function shiftdown() {
 function shiftup() {
   keyboardButtons.forEach((button, index) => {
     if (lang === "en") {
-      // eslint-disable-next-line no-param-reassign
-      button.value = englishKeyboard.values[index];
-      // eslint-disable-next-line no-param-reassign
-      button.textContent = englishKeyboard.symbols[index];
+      const buttonNew = button;
+      buttonNew.value = englishKeyboard.values[index];
+      buttonNew.textContent = englishKeyboard.symbols[index];
     } else {
-      // eslint-disable-next-line no-param-reassign
-      button.value = belarusKeyboard.values[index];
-      // eslint-disable-next-line no-param-reassign
-      button.textContent = belarusKeyboard.symbols[index];
+      const buttonNew = button;
+      buttonNew.value = belarusKeyboard.values[index];
+      buttonNew.textContent = belarusKeyboard.symbols[index];
     }
     if (capslockIsOn) {
       capslockIsOn = false;
@@ -277,29 +274,24 @@ function shiftup() {
   });
 }
 
-const element = document.querySelector("[data-code=\"KeyQ\"]");
-const { textContent } = element;
-const isUpperCase = /[A-Z]/.test(textContent);
-let caseStats = !!isUpperCase;
-
 document.addEventListener("keydown", (event) => {
   if (event.code === "ShiftLeft" || event.code === "ShiftRight") {
-    shiftInPress = true;
     shiftdown();
-    if (caseStats === !true) {
+    if (!currCase && !shiftInPress) {
       toUpper();
-    } else {
+    } else if (currCase && !shiftInPress) {
       toLower();
     }
+    shiftInPress = true;
   }
 });
 document.addEventListener("keyup", (event) => {
   shiftInPress = false;
   if (event.code === "ShiftLeft" || event.code === "ShiftRight") {
     shiftup();
-    if (caseStats === true) {
+    if (!currCase && !shiftInPress) {
       toUpper();
-    } else {
+    } else if (currCase && !shiftInPress) {
       toLower();
     }
   }
@@ -324,12 +316,11 @@ document.addEventListener("keydown", (event) => {
       inputText(character);
     }
     if (event.key === "CapsLock") {
-      caseStats = !caseStats;
       virtualKey.classList.toggle("active");
       if (shiftInPress === false) {
         capslockIsOn = !capslockIsOn;
       }
-      if (caseStats === true) {
+      if (!currCase && capslockIsOn) {
         toUpper();
       } else {
         toLower();
@@ -357,10 +348,7 @@ virtualKeys.forEach((key) => {
       backspaceText();
     } else if (code === "Delete") {
       deleteText();
-    } else {
-      inputText(character);
-    }
-    if (code === "CapsLock") {
+    } else if (code === "CapsLock") {
       key.classList.toggle("active");
       capslockIsOn = !capslockIsOn;
       if (capslockIsOn) {
@@ -368,15 +356,7 @@ virtualKeys.forEach((key) => {
       } else {
         toLower();
       }
-    }
-    event.preventDefault();
-  });
-});
-
-virtualKeys.forEach((key) => {
-  key.addEventListener("mousedown", (event) => {
-    const code = key.getAttribute("data-code");
-    if (code === "ShiftLeft" || code === "ShiftRight") {
+    } else if (code === "ShiftLeft" || code === "ShiftRight") {
       shiftInPress = true;
       shiftdown();
       if (capslockIsOn) {
@@ -384,8 +364,10 @@ virtualKeys.forEach((key) => {
       } else {
         toUpper();
       }
-      event.preventDefault();
+    } else {
+      inputText(character);
     }
+    event.preventDefault();
   });
 });
 
@@ -393,7 +375,7 @@ document.addEventListener("mouseup", (event) => {
   if (shiftInPress) {
     shiftInPress = false;
     shiftup();
-    if (capslockIsOn) {
+    if (!capslockIsOn) {
       toLower();
     } else {
       toUpper();
