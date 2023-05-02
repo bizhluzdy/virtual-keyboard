@@ -220,16 +220,25 @@ function inputText(text) {
   textarea.setSelectionRange(selectionStart + text.length, selectionStart + text.length);
 }
 function backspaceText() {
-  const { selectionStart, value } = textarea;
-  if (selectionStart > 0) {
+  const { selectionStart, selectionEnd, value } = textarea;
+  if (selectionStart < selectionEnd) { // удаление выделенного текста
+    const newValue = value.substring(0, selectionStart) + value.substring(selectionEnd);
+    textarea.value = newValue;
+    textarea.setSelectionRange(selectionStart, selectionStart);
+  } else if (selectionStart > 0) { // удаление одного символа
     const newValue = value.substring(0, selectionStart - 1) + value.substring(selectionStart);
     textarea.value = newValue;
     textarea.setSelectionRange(selectionStart - 1, selectionStart - 1);
   }
 }
+
 function deleteText() {
-  const { selectionStart, value } = textarea;
-  if (selectionStart < value.length) {
+  const { selectionStart, selectionEnd, value } = textarea;
+  if (selectionStart < selectionEnd) { // удаление выделенного текста
+    const newValue = value.substring(0, selectionStart) + value.substring(selectionEnd);
+    textarea.value = newValue;
+    textarea.setSelectionRange(selectionStart, selectionStart);
+  } else if (selectionStart < value.length) { // удаление одного символа
     const newValue = value.substring(0, selectionStart) + value.substring(selectionStart + 1);
     textarea.value = newValue;
     textarea.setSelectionRange(selectionStart, selectionStart);
@@ -313,7 +322,9 @@ document.addEventListener("keydown", (event) => {
     } else {
       event.preventDefault();
       const character = virtualKey.value;
-      inputText(character);
+      if (character !== "") {
+        inputText(character);
+      }
     }
     if (event.key === "CapsLock") {
       virtualKey.classList.toggle("active");
@@ -364,7 +375,7 @@ virtualKeys.forEach((key) => {
       } else {
         toUpper();
       }
-    } else {
+    } else if (character !== "") {
       inputText(character);
     }
     event.preventDefault();
@@ -382,4 +393,7 @@ document.addEventListener("mouseup", (event) => {
     }
     event.preventDefault();
   }
+});
+document.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
 });
